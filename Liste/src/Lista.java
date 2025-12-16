@@ -10,11 +10,22 @@ public void addHead(Nodo n){
     root = n;
     n.setNext(tmp);
 }
-public void remove(String s){
+public void remove(String s) {
+    if (root == null) return;
 
-}
-public void exists(String s){
-return true;
+    if (root.getValue().equals(s)) {
+        root = root.getNext();
+        return;
+    }
+public boolean exists(String s) {
+    Nodo temp = root;
+    while (temp != null) {
+        if (temp.getValue().equals(s)) {
+            return true;
+        }
+        temp = temp.getNext();
+    }
+    return false;
 }
 public void addAdd(String s){
     Nodo n= new Nodo(s);
